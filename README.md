@@ -1,6 +1,6 @@
 # Capsule_gluon
 ## capsule生成函数
- PrimaryCap的生成非常类似group convolution  
+ PrimaryCap层的生成可以按group convolution的思想来理解  
  len_vector: PrimaryCap生成的向量长度  
  cap_channels: 向量通道数  
 ## CapsuleLayer
