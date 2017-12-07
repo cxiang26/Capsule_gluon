@@ -1,14 +1,4 @@
 # Capsule_gluon
-
-
-```python
-import mxnet as mx
-from mxnet import gluon, nd, autograd, image, init
-from mxnet.gluon import nn
-from CapsuleLayer import PrimaryCap, CapsuleLayer, length
-import utils
-```
-
 ## capsule生成函数
  PrimaryCap的生成非常类似group convolution  
  len_vector: PrimaryCap生成的向量长度  
