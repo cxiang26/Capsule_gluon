@@ -1,18 +1,18 @@
 # Capsule_gluon
 ## capsule生成函数
- PrimaryCap层的生成可以按group convolution的思想来理解  
+ PrimaryCap层的生成可以按group convolution的思想来理解  
  len_vector: PrimaryCap生成的向量长度  
  cap_channels: 向量通道数  
 ## CapsuleLayer
-CapsuleLayer运算并不复杂，最重要的是要对向量进行对齐  
-len_vectors_input: 输入向量的长度  
-len_vectors_output: 输出向量长度  
-num_input: capsule的输入个数，这个参数可由上一层输出得到，例：(6\*6\*32) = 1152  
-num_output: capsule的输出个数  
-num_routing: 路由迭代次数  
+ CapsuleLayer运算并不复杂，最重要的是要对向量进行对齐  
+ len_vectors_input: 输入向量的长度  
+ len_vectors_output: 输出向量长度  
+ num_input: capsule的输入个数，这个参数可由上一层输出得到，例：(6\*6\*32) = 1152  
+ num_output: capsule的输出个数  
+ num_routing: 路由迭代次数  
 ### Dynamic routing
-动态路由并不会根据反向传播更新，而是根据向量间的相似性来更新。  
-由于输出向量是由输入向量加权求得，如果输出向量与输入向量中的某些向量相似(方向一致)，那么他们的向量积越大，反之越小。  
+ 动态路由并不会根据反向传播更新，而是根据向量间的相似性来更新。  
+ 由于输出向量是由输入向量加权求得，如果输出向量与输入向量中的某些向量相似(方向一致)，那么他们的向量积越大，反之越小。  
 
 
 ```python
@@ -28,7 +28,7 @@ def createnet(batch_size=2, ctx=mx.cpu()):
 ```
 
 ## 损失计算
-由于capsulenet输出的是向量，因此不能简单的使用softmaxcrossentry来计算损失，这里用的是Margin loss.
+ 由于capsulenet输出的是向量，因此不能简单的使用softmaxcrossentry来计算损失，这里用的是Margin loss.
 
 
 ```python
