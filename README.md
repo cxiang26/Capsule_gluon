@@ -7,7 +7,7 @@
 CapsuleLayer运算并不复杂，最重要的是要对向量进行对齐  
 len_vectors_input: 输入向量的长度  
 len_vectors_output: 输出向量长度  
-num_input: capsule的输入个数，这个参数可由上一层输出得到，例：(6*6*32) = 1152  
+num_input: capsule的输入个数，这个参数可由上一层输出得到，例：(6\*6\*32) = 1152  
 num_output: capsule的输出个数  
 num_routing: 路由迭代次数  
 ### Dynamic routing
